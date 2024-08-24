@@ -20,7 +20,7 @@ const createUser = async (req, res = response) => {
 		user.password = hashSync(password, salt);
 		await user.save();
 
-		const token = await generateJWT(findedUser._id, findedUser.name);
+		const token = await generateJWT(findedUser.id, findedUser.name);
 		return res.status(201).json({
 			ok: true,
 			uid: user.id,
