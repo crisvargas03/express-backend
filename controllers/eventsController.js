@@ -41,6 +41,7 @@ const createEvent = async (req, res = response) => {
 };
 
 const updateEvent = async (req = request, res = response) => {
+	console.log(request);
 	const eventId = req.params.id;
 	try {
 		const findedEvent = await Event.findById(eventId);
