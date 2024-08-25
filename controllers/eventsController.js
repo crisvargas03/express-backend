@@ -69,6 +69,8 @@ const updateEvent = async (req = request, res = response) => {
 			{ new: true }
 		);
 
+		await sleep(5000);
+
 		return res.status(200).json({
 			ok: true,
 			updatedEvent,
