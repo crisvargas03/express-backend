@@ -69,12 +69,6 @@ const updateEvent = async (req = request, res = response) => {
 			{ new: true }
 		);
 
-		// Función para simular un retraso
-		const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-
-		// Espera 5 segundos (5000 milisegundos)
-		await sleep(10000);
-
 		return res.status(200).json({
 			ok: true,
 			updatedEvent,
