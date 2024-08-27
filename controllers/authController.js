@@ -20,8 +20,6 @@ const createUser = async (req, res = response) => {
 		user.password = hashSync(password, salt);
 		await user.save();
 
-		console.log(findedUser);
-
 		const token = await generateJWT(user.id, user.name);
 		return res.status(201).json({
 			ok: true,
